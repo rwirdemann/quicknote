@@ -28,6 +28,7 @@ public:
     QString status() const;
 
     Q_INVOKABLE void save();
+    Q_INVOKABLE void reload();
 
 signals:
     void contentChanged();

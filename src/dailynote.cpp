@@ -54,6 +54,14 @@ void DailyNote::setStatus(const QString &status)
     emit statusChanged();
 }
 
+// reload re-reads the note for the current date, picking up edits
+// made outside the app and rolling over to a new file if the date
+// has changed.
+void DailyNote::reload()
+{
+    load();
+}
+
 void DailyNote::load()
 {
     QDir dir(m_vaultDir);

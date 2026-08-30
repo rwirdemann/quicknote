@@ -25,6 +25,16 @@ ApplicationWindow {
 
     DailyNote {
         id: note
+
+        onContentChanged: {
+            if (editor.text !== note.content)
+                editor.text = note.content
+        }
+    }
+
+    onActiveChanged: {
+        if (active)
+            note.reload()
     }
 
     Shortcut {
