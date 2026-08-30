@@ -32,4 +32,4 @@ cmake -B build
 cmake --build build
 ```
 
-The resulting app bundle is at `build/osquick.app`.
+The resulting app bundle is at `build/quicknote.app`.

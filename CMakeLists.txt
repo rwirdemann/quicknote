@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(osquick VERSION 0.1 LANGUAGES CXX)
+project(quicknote VERSION 0.1 LANGUAGES CXX)
 
 if(APPLE)
     enable_language(OBJCXX)
@@ -14,7 +14,7 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick QuickControls2)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
-qt_add_executable(osquick
+qt_add_executable(quicknote
     src/main.cpp
     src/dailynote.h
     src/dailynote.cpp
@@ -22,8 +22,8 @@ qt_add_executable(osquick
     src/globalhotkey.mm
 )
 
-qt_add_qml_module(osquick
-    URI Osquick
+qt_add_qml_module(quicknote
+    URI Quicknote
     VERSION 1.0
     QML_FILES
         qml/Main.qml
@@ -31,9 +31,9 @@ qt_add_qml_module(osquick
         resources/tray-icon.png
 )
 
-target_include_directories(osquick PRIVATE src)
+target_include_directories(quicknote PRIVATE src)
 
-target_link_libraries(osquick PRIVATE
+target_link_libraries(quicknote PRIVATE
     Qt6::Core
     Qt6::Gui
     Qt6::Qml
@@ -42,17 +42,17 @@ target_link_libraries(osquick PRIVATE
 )
 
 if(APPLE)
-    target_link_libraries(osquick PRIVATE "-framework Carbon")
+    target_link_libraries(quicknote PRIVATE "-framework Carbon")
 endif()
 
 if(APPLE)
-    target_sources(osquick PRIVATE resources/AppIcon.icns)
+    target_sources(quicknote PRIVATE resources/AppIcon.icns)
     set_source_files_properties(resources/AppIcon.icns PROPERTIES
         MACOSX_PACKAGE_LOCATION Resources
     )
 endif()
 
-set_target_properties(osquick PROPERTIES
+set_target_properties(quicknote PROPERTIES
     MACOSX_BUNDLE TRUE
     MACOSX_BUNDLE_ICON_FILE AppIcon.icns
 )

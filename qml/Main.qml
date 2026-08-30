@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import Qt.labs.platform
-import Osquick
+import Quicknote
 
 ApplicationWindow {
     id: window
@@ -61,7 +61,7 @@ ApplicationWindow {
     SystemTrayIcon {
         id: trayIcon
         visible: true
-        icon.source: "qrc:/qt/qml/Osquick/resources/tray-icon.png"
+        icon.source: "qrc:/qt/qml/Quicknote/resources/tray-icon.png"
         icon.mask: true
 
         onActivated: reason => {
