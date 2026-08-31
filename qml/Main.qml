@@ -103,6 +103,7 @@ ApplicationWindow {
 
     ScrollView {
         anchors.fill: parent
+        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
 
         TextArea {
             id: editor
