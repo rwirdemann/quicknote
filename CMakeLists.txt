@@ -56,3 +56,10 @@ set_target_properties(quicknote PROPERTIES
     MACOSX_BUNDLE TRUE
     MACOSX_BUNDLE_ICON_FILE AppIcon.icns
 )
+
+if(APPLE)
+    set_target_properties(quicknote PROPERTIES
+        MACOSX_BUNDLE_INFO_PLIST
+            ${CMAKE_CURRENT_SOURCE_DIR}/resources/Info.plist.in
+    )
+endif()
