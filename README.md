@@ -33,3 +33,14 @@ cmake --build build
 ```
 
 The resulting app bundle is at `build/quicknote.app`.
+
+## Installing a release build
+
+Release zips are unsigned. After downloading and unzipping, macOS
+Gatekeeper will refuse to open the app with "the file is damaged
+and should be moved to the Trash" — this just means it's quarantined,
+not actually corrupted. Remove the quarantine attribute to fix it:
+
+```sh
+xattr -cr /path/to/quicknote.app
+```
