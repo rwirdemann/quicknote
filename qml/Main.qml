@@ -35,6 +35,8 @@ ApplicationWindow {
     onActiveChanged: {
         if (active)
             note.reload()
+        else
+            note.save()
     }
 
     Shortcut {
