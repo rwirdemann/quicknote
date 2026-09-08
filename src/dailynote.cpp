@@ -1,5 +1,7 @@
 #include "dailynote.h"
 
+#include "config.h"
+
 #include <QDate>
 #include <QDateTime>
 #include <QDir>
@@ -8,8 +10,7 @@
 
 DailyNote::DailyNote(QObject *parent)
     : QObject(parent)
-    , m_vaultDir(QDir::homePath() +
-                 "/Jottacloud/zettelkasten/Tagebuch")
+    , m_vaultDir(Config::vaultDir())
 {
     load();
 }

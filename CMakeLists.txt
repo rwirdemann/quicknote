@@ -16,6 +16,8 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(quicknote
     src/main.cpp
+    src/config.h
+    src/config.cpp
     src/dailynote.h
     src/dailynote.cpp
     src/globalhotkey.h

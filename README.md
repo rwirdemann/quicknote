@@ -15,9 +15,13 @@ Built with Qt 6 (QML) and C++.
 
 ## Configuration
 
-The vault directory is currently hardcoded in
-`src/dailynote.cpp` to `~/Jottacloud/zettelkasten/Tagebuch`.
-Adjust it there to point at your own vault.
+The vault directory is read from `~/.config/quicknote.toml`. A
+default config pointing at `~/Dropbox/zettelkasten/Tagebuch` is
+created on first run if the file doesn't exist:
+
+```toml
+vault_dir = "~/Dropbox/zettelkasten/Tagebuch"
+```
 
 ## Requirements
 
